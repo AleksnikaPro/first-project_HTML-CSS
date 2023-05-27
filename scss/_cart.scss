@@ -1,0 +1,304 @@
+@import 'vars';
+@import 'mixins';
+
+.shopping-cart {
+    background: #F8F3F4;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &__title {
+        @include font-lato-regular(24px, 29px);
+        color: $mainColorOfSite;
+        margin: 0;
+    }
+}
+
+.cart-content {
+    display: grid;
+    grid-template-columns: 652px 360px;
+    grid-template-rows: repeat (2, 1fr);
+    justify-content: center;
+    align-items: center;
+    grid-column-gap: 128px;
+    grid-row-gap: 72px;
+    padding-top: 96px;
+    padding-bottom: 128px;
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    &__item {
+        display: flex;
+        gap: 31px;
+        box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.13);
+        background: $lightColorOfSite;
+        position: relative;
+    }
+
+    &__img {
+        height: 100%;
+    }
+}
+
+.button-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: center;
+
+    &__btn {
+        @include font-lato-light(14px, 17px);
+        text-align: center;
+        color: $thirdDarkColorOfSite;
+        box-sizing: border-box;
+        padding: 16px 40px 16px;
+        border: 1px solid #A4A4A4;
+        background: $lightColorOfSite;
+        cursor: pointer;
+        @include transition-fast();
+
+        &:hover {
+            color: $lightColorOfSite;
+            background: $mainColorOfSite;
+            border: 1px solid $mainColorOfSite;
+            @include transition-slow();
+        }
+
+        &:focus {
+            outline: none !important;
+        }
+    }
+}
+
+.item__description {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+}
+
+.item__cross-button {
+    position: absolute;
+    display: block;
+    width: 18px;
+    height: 18px;
+    top: 28px;
+    right: 22px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    background-color: $lightColorOfSite;
+    @include transition-fast();
+
+    &:hover path {
+        fill: $mainColorOfSite;
+        @include transition-slow();
+    }
+}
+
+
+.item__top {
+    display: flex;
+    flex-direction: column;
+    padding-top: 22px;
+
+}
+
+.item__heading {
+    @include font-lato-regular(24px, 29px);
+    color: $darkColorOfSite;
+    margin: 0;
+}
+
+.item__properties {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.item__property {
+    @include font-lato-regular(22px, 26px);
+    color: #575757;
+
+    &_colorful {
+        color: $mainColorOfSite
+    }
+
+    input {
+        margin-left: 24px;
+        @include font-lato-regular(18px, 22px);
+        color: #656565;
+        border: 1px solid #EAEAEA;
+        border-radius: 0px;
+        text-align: center;
+        height: 24px;
+        width: 44px;
+        bottom: 0;
+    }
+}
+
+.shipping-content {
+    display: flex;
+    flex-direction: column;
+    padding-top: 17px;
+    padding-bottom: 92px;
+    gap: 57px;
+    box-sizing: border-box;
+
+    &__area {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__heading {
+        @include font-lato-light(16px, 19px);
+        color: $darkColorOfSite;
+        margin: 0;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+.shipping__input {
+    @include font-lato-light(13px, 16px);
+    color: $darkColorOfSite;
+    border: 1px solid $secondSemiDarkColorofSite;
+    background: $lightColorOfSite;
+    padding: 12px 17px 15px;
+    box-sizing: border-box;
+
+    &::placeholder {
+        color: #B1B1B1;
+    }
+
+    &:focus {
+        outline: none;
+        border:1px solid $mainColorOfSite;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.13);
+        @include transition-slow();
+    }
+
+}
+
+.shipping__button-box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin-top: 4px;
+
+}
+
+.shipping__button {
+    @include font-lato-light(11px, 13px);
+    color: $thirdDarkColorOfSite;
+    box-sizing: border-box;
+    padding: 9px 14px 11px;
+    border: 1px solid $secondSemiDarkColorofSite;
+    background: $lightColorOfSite;
+    cursor: pointer;
+    @include transition-fast();
+
+    &:hover {
+        color: $lightColorOfSite;
+        background: $mainColorOfSite;
+        border: 1px solid $mainColorOfSite;
+        @include transition-slow();
+    }
+
+    &:focus {
+        outline: none !important;
+        box-shadow: none;
+        @include transition-slow();
+    }
+
+}
+
+.checkout-content {
+    display: flex;
+    flex-direction: column;
+    padding: 39px 42px 42px;
+    background: #F5F3F3;
+
+    &__sub {
+        display: flex;
+        justify-content: flex-end;
+        @include font-lato-regular(11px, 13px);
+        color: $secondSemiDarkColorofSite;
+        margin: 0;
+        margin-bottom: 12px;
+        
+    }
+
+    &__sub-price {
+        padding-left: 20px;
+        @include font-lato-regular(11px, 13px);
+        color: $secondSemiDarkColorofSite;
+    }
+
+    &__grand {
+        display: flex;
+        justify-content: flex-end;
+        @include font-lato-light(16px, 19px);
+        color: $darkColorOfSite;
+        margin: 0;
+        margin-bottom: 21px;
+      
+    }
+
+    &__grand-price {
+        padding-left: 20px;
+        @include font-lato-bold(16px, 19px);
+        color: $mainColorOfSite;
+
+    }
+
+    &__line {
+        height: 1px;
+        background: #E2E2E2;
+        margin-bottom: 17px;
+    }
+
+    &__button-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    &__button {
+        @include font-lato-light(16px, 19px);
+        color: $lightColorOfSite;
+        background: $mainColorOfSite;
+        border: 1px solid rgba(0, 0, 0, 0);
+        padding: 16px 42px;
+        box-sizing: border-box;
+        cursor: pointer;
+        @include transition-fast();        
+
+        &:hover {
+            color: $mainColorOfSite;
+            background: $lightColorOfSite;
+            border: 1px solid $mainColorOfSite;
+            @include transition-slow();
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+@import 'cart-media';

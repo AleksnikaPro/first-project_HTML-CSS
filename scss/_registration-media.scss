@@ -1,0 +1,146 @@
+@media (max-width: 1024px) {
+    .center {
+        padding-left: calc(50% - 368px);
+        padding-right: calc(50% - 368px);
+    }
+
+    .header {
+        min-height: 74px;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    .registration-content {
+        grid-template-columns: 360px 354px;
+        grid-column-gap: 22px;
+        padding-top: 40px;
+
+        &__left {
+            .input {
+                padding: 12px 15px 16px;
+            }
+
+            .radio-content {
+                margin-top: 31px;
+                margin-bottom: 31px;
+            }
+        }
+
+        &__right {
+
+            .heading {
+                @include font-lato-light(16px, 19px);
+                margin-bottom: 32px;
+            }
+
+            .text {
+                @include font-lato-light(16px, 19px);
+                margin-bottom: 22px;
+            }
+
+            .list {
+                gap: 24px;
+
+                &__item {
+                    @include font-lato-light(16px, 19px);
+                }
+            }
+
+        }
+    }
+
+    .footer-subscribe {
+        justify-content: center;
+        padding-top: 64px;
+        padding-bottom: 140px;
+
+        &__box {
+            margin-bottom: 27px;
+        }
+    }
+
+    .footer-logo {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .center {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .registration-top {
+        justify-content: center;
+    }
+
+    .registration-content {
+        grid-template-columns: 1fr;
+        padding-top: 40px;
+
+        &__right {
+            .heading {
+                margin-top: 40px;
+                margin-bottom: 32px;
+            }
+
+            .text {
+                margin-bottom: 22px;
+            }
+        }
+    }
+
+    .footer-subscribe {
+        padding-bottom: 110px;
+        gap: 59px;
+
+        &__box {
+            margin-bottom: 22px;
+        }
+
+        &__text {
+            @include font-lato-regular(18px, 22px);
+            padding-bottom: 10px;
+
+        }
+
+        &__title {
+            @include font-lato-semibold(24px, 37px);
+        }
+    
+        &__subtitle {
+            @include font-lato-regular(14px, 21px);
+        }
+
+
+    }
+
+    .footer-logo {
+        flex-direction: column-reverse;
+        gap: 40px;
+        padding: 43px 62px 9px;
+    }
+}
+
+@media (max-width: 374px) {
+
+    .center {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .footer-subscribe {
+        padding-bottom: 81px;
+
+    }
+}

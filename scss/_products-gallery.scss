@@ -1,0 +1,218 @@
+@import 'vars';
+@import 'mixins';
+
+.filter-sort {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    box-sizing: border-box;
+    padding-top: 39px;
+    position: relative;
+    height: 134px;
+
+}
+
+.filter {
+    padding: 12px 16px 16px 0px;
+    width: 360px;
+    z-index: 5;
+    cursor: pointer;
+
+    &[open] {
+        padding: 12px 16px 16px 16px;
+    }
+
+
+    &__summary {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+    }
+
+    &__heading {
+        @include font-lato-semibold(14px, 17px);
+        color: $thirdDarkColorOfSite;
+    }
+
+    &[open] .filter__heading {
+        color: $mainColorOfSite;
+    }
+
+    &[open] path {
+        fill: $mainColorOfSite;
+    }
+
+    &__content {
+        margin-top: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+
+    }
+
+    &[open] {
+        min-width: 360px;
+        height: fit-content;
+        background: $lightColorOfSite;
+        box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+    }
+
+
+    &__subsummary {
+        border-bottom: 1px solid $fourthLightColorOfSite;
+        padding-bottom: 11px;
+    }
+
+    &__subheading {
+        @include font-lato-regular(14px, 17px);
+        color: $semiDarkColorofSite;
+        padding: 8px 0px 11px 11px;
+        border-left: 5px solid $mainColorOfSite;
+
+    }
+
+    &__item[open] .filter__subheading {
+        color: $mainColorOfSite;
+    }
+
+
+    &__link-box {
+        display: flex;
+        flex-direction: column;
+        gap: 11px;
+        padding-top: 24px;
+        padding-bottom: 24px;
+        padding-left: 11px;
+    }
+
+    &__link {
+        @include font-lato-regular(14px, 17px);
+        text-decoration: none;
+        color: $semiDarkColorofSite;
+
+        &:hover {
+            color: $mainColorOfSite;
+        }
+    }
+
+}
+
+.sort {
+    min-width: 360px;
+    min-width: fit-content;
+    padding: 12px 0px 16px;
+    display: flex;
+    flex-direction: row;
+    gap: 28px;
+   
+
+    summary {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &__heading {
+            @include font-lato-regular(14px, 17px);
+            color: $semiDarkColorofSite;
+        }
+
+        &.svg-position {
+            background: $semiDarkColorofSite;
+        }
+
+
+    }
+
+    &__item {
+        position: relative;
+        cursor: pointer;
+    }
+
+    &__form {
+        position: absolute;
+        background: $lightColorOfSite;
+        box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+        padding: 7px 30px 11px 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 9px;        
+        transform: translateX(-10px);
+        min-width: 40px;
+        z-index: 2;
+        margin-top: 5px;
+
+        &-size {
+            font-family: 'Roboto', sans-serif;
+            @include font-roboto-regular(14px, 16px);
+            color: $semiDarkColorofSite;
+        }
+    }
+}
+
+.content-products {
+
+    &__products-gallery-paddings {
+        padding-top: 0px;
+        padding-bottom: 48px;
+    }
+}
+ 
+
+.pagination {
+    @include flexible();
+    margin-bottom: 96px;
+}
+
+.pagination-box {
+    display: inline-block;
+    margin: 0;
+    max-width: auto;
+    border: 1px solid $fourthLightColorOfSite;
+    border-radius: 3px;
+    padding: 12px 8px;
+
+    &__item {
+        @include font-lato-light(16px, 19px);
+        color: #C4C4C4;
+        padding-right: 8px;
+        padding-left: 8px;
+
+        &_dots{
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        &_previous{
+            padding-right: 0;
+        }
+
+        &_next{
+            padding-left: 0;
+        }
+
+        &_active {
+            color: $mainColorOfSite
+        }
+
+        &_button-right, &_button-left{
+            @include transition-fast();
+
+            &:hover path {
+                fill: $mainColorOfSite;
+                @include transition-slow();
+            }
+        
+            &:focus path {
+                fill: $mainColorOfSite;
+                @include transition-slow();
+            }
+        
+            &:active path {
+                fill: $mainColorOfSite;
+                @include transition-slow();
+            }
+        }
+    } 
+}
+
+@import 'product-gallery-media';

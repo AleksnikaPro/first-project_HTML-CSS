@@ -1,0 +1,250 @@
+@import 'vars';
+@import 'mixins';
+
+.new-arrivals {
+    background: #F8F3F4;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__title {
+        margin: 0;
+        @include font-lato-regular(24px, 29px);
+        color: $mainColorOfSite;
+    }
+
+
+    .breadcrumbs {
+        margin: 0;
+        padding: 0;
+
+        &__item {
+            display: inline-block;
+            align-items: center;
+    
+            &:not(:last-child)::after {
+                content: "/";                
+                margin-left: 8px;
+                margin-right: 8px;
+            }
+
+
+        }
+    
+        &__link {
+            @include font-lato-light(14px, 17px);
+            color: #636363;
+            @include transition-fast();
+    
+            &:hover {
+                color: $mainColorOfSite;
+                @include transition-slow();
+            }
+    
+            &:focus {
+                color: $mainColorOfSite;
+                @include transition-slow();
+            }
+    
+            &:active {
+                color: $mainColorOfSite;
+                @include transition-slow();
+            }
+    
+            &_active {
+                @include font-lato-bold(14px, 17px);
+                color: $mainColorOfSite;
+            }
+        }
+    }  
+}
+
+.slider {
+    max-width: 1600px;
+    @include flexible();
+    background: #F7F7F7;
+    height: 777px;
+    position: relative;
+    border: 1px solid #EAEAEA;
+
+    &__arrow-left {
+        height: 47px;
+        width: 47px;
+        background: $fourthDarkColorOfSite;
+        position: absolute;
+        left: 0;
+        transform: translateY(-50%);
+        @include flexible();
+        cursor: pointer;
+        border: none;
+        @include transition-fast();
+
+        & path {
+            @include transition-slow();
+        }
+
+        &:hover path {
+            fill: $mainColorOfSite;
+        }
+    }
+
+
+    &__image {
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    &__arrow-right {
+        height: 47px;
+        width: 47px;
+        background: $fourthDarkColorOfSite;
+        position: absolute;
+        right: 0;
+        transform: translateY(-50%);
+        @include flexible();
+        cursor: pointer;
+        border: none;
+        @include transition-fast();
+
+        & path {
+            @include transition-slow();
+        }
+
+        &:hover path {
+            fill: $mainColorOfSite;
+        }
+    }
+
+
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 64px;
+    padding-bottom: 64px;
+    margin-top: 0px;
+    gap: 12px;
+    max-width: $desktopWidthOfSite;
+    background: $lightColorOfSite;
+    min-height: 100px;
+    margin: -65px auto 0px;
+    box-sizing: border-box;
+    border: 1px solid #EAEAEA;
+    position: relative;
+    z-index: 10;
+
+    &__subtitle {
+        @include font-lato-light(14px, 17px);
+        color: $mainColorOfSite;
+        margin: 0;
+    }
+
+    &__line {
+        width: 64px;
+        height: 3px;
+        background: $mainColorOfSite;
+        border: none;
+        margin: 0;
+    }
+
+    &__title {
+        @include font-lato-light(18px, 22px);
+        color: #4D4D4D;
+        margin: 0;
+        
+    }
+
+    &__text {
+        padding-top: 36px;
+        padding-bottom: 20px;
+        @include font-lato-light(14px, 17px);
+        text-align: center;
+        color: #5E5E5E;
+        text-align: center;
+        max-width: 550px;
+        margin: 0;
+    }
+
+    &__price {
+        @include font-lato-light(24px, 29px);
+        color: $mainColorOfSite;
+        padding-bottom: 53px;
+        margin: 0;
+    }
+
+    &__hr {
+        display: block;
+        min-width: 56%;
+        max-width: 642px;
+        height: 1px;
+        background: #EAEAEA;
+        border: none;
+        margin: 0;
+    }
+
+    &__filter {
+        padding-top: 53px;
+        padding-bottom: 37px;
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+        margin: 0;
+
+        summary {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            @include font-lato-regular(14px, 17px);
+            color: $semiDarkColorofSite;
+
+            &.svg-position {
+                background: $semiDarkColorofSite;
+            }
+        }
+    }
+
+
+    &__cart {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 23px;
+        @include font-lato-regular(16px, 19px);
+        color: $mainColorOfSite;
+        border: 1px solid $mainColorOfSite;
+        padding: 15px 56px 9px 23px;
+        text-decoration: none;
+        background: none;
+        cursor: pointer;
+        @include transition-fast();
+
+        &:hover {
+            color: $lightColorOfSite;
+            border: 1px solid $lightColorOfSite;
+            background: $mainColorOfSite;
+            @include transition-slow();
+
+            & path {
+                fill: $lightColorOfSite;
+            }
+        }
+
+        & path {
+            fill: $mainColorOfSite;
+        }
+    }
+}
+
+.content-products {
+
+    &__product-paddings {
+        padding-top: 129px;
+        padding-bottom: 128px;
+    }
+}
+
+@import 'product-media';
